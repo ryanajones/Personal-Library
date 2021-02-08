@@ -16,7 +16,7 @@ mongoose.connect(
   }
 );
 
-// Database schemas
+// Database schema
 const { Schema } = mongoose;
 
 const bookSchema = new Schema({
@@ -29,30 +29,23 @@ const Books = mongoose.model('books', bookSchema);
 module.exports = function (app) {
   app
     .route('/api/books')
+
+    // Handle GET request to receive JSON response of an documented books
+    // stored in the personal library. Response will have id, title, and
+    // number of comments in the comments array.
     .get(function (req, res) {
-      // response will be array of book objects
-      // json res format: [{"_id": bookid, "title": book_title, "commentcount": num_of_comments },...]
       const booksResponse = [];
-      const fieldsToFilter = {
-        _id: 'hello',
-        title: 'test',
-        comments: 'tester',
-      };
-      const test = {
-        _id: '601d4ce94a028f646f9fa5a9',
-        title: 'hello',
-        comments: [],
-        __v: 0,
-      };
+      const fieldsToFilter = ['_id', 'title', 'comments'];
       Books.find({}, (err, booksFound) => {
-        // console.log(booksFound[0]._id);
         if (err) return console.log(err);
-        Object.keys(fieldsToFilter).forEach((key, index) => {
-          console.log(key);
-          /* booksResponse = booksResponse.filter(
-            (field) => field[key] == fieldsToFilter[key]
-          ); */
+        booksFound.forEach((book) => {
+          booksResponse.push({
+            _id: book._id,
+            title: book.title,
+            commentcount: book.comments.length,
+          });
         });
+        res.json(booksResponse);
       });
     })
 
