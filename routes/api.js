@@ -21,7 +21,7 @@ const { Schema } = mongoose;
 
 const bookSchema = new Schema({
   title: { type: String, required: true },
-  comments: [{ comment: String }],
+  comments: [{ type: String }],
 });
 
 const Books = mongoose.model('books', bookSchema);
@@ -30,14 +30,12 @@ module.exports = function (app) {
   app
     .route('/api/books')
 
-    // Handle GET request to receive JSON response of an documented books
-    // stored in the personal library. Response will have id, title, and
-    // number of comments in the comments array.
+    // Handle GET request to receive JSON response of all documented books
     .get(function (req, res) {
-      const booksResponse = [];
-      const fieldsToFilter = ['_id', 'title', 'comments'];
       Books.find({}, (err, booksFound) => {
         if (err) return console.log(err);
+        // Make new array of necessary book properties
+        const booksResponse = [];
         booksFound.forEach((book) => {
           booksResponse.push({
             _id: book._id,
@@ -45,13 +43,13 @@ module.exports = function (app) {
             commentcount: book.comments.length,
           });
         });
-        res.json(booksResponse);
+        return res.json(booksResponse);
       });
     })
 
+    // Handle POST request to make a new book entry in the library
     .post(function (req, res) {
       const { title } = req.body;
-      // response will contain new book object including atleast _id and title
 
       if (!title) {
         return res.json('missing required field title');
@@ -63,25 +61,65 @@ module.exports = function (app) {
       });
     })
 
+    // Handle request to delete all books in database
     .delete(function (req, res) {
-      // if successful response will be 'complete delete successful'
+      Books.deleteMany({}, (err, booksRemoved) => {
+        if (err) return console.log(err);
+        return res.json('complete delete successful');
+      });
     });
 
   app
     .route('/api/books/:id')
+
+    // Handle GET request for specific book and it's comments using an id
     .get(function (req, res) {
       const bookid = req.params.id;
-      // json res format: {"_id": bookid, "title": book_title, "comments": [comment,comment,...]}
+      Books.findById(bookid, (err, bookFound) => {
+        if (err) return console.log(err);
+        if (!bookFound) return res.json('no book exists');
+        const { _id, title, comments } = bookFound;
+        return res.json({
+          _id,
+          title,
+          comments,
+        });
+      });
     })
 
+    // Handle POST request to find book by ID and update it with
+    // a new comment
     .post(function (req, res) {
       const bookid = req.params.id;
       const { comment } = req.body;
-      // json res format same as .get
+
+      if (!comment)
+        return res.json('the string missing required field comment');
+      const updateResponse = [];
+      Books.findByIdAndUpdate(
+        { _id: bookid },
+        { $push: { comments: comment } },
+        { new: true },
+        (err, bookUpdated) => {
+          if (err) return console.log(err);
+          if (!bookUpdated) return res.json('no book exists');
+          const { _id, title, comments } = bookUpdated;
+          return res.json({
+            _id,
+            title,
+            comments,
+          });
+        }
+      );
     })
 
+    // Handle request to find book by ID and delete
     .delete(function (req, res) {
       const bookid = req.params.id;
-      // if successful response will be 'delete successful'
+      Books.findByIdAndDelete(bookid, (err, bookDeleted) => {
+        if (err) return console.log(err);
+        if (!bookDeleted) return res.json('no book exists');
+        return res.json('delete successful');
+      });
     });
 };
