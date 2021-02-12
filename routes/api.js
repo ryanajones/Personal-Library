@@ -93,8 +93,8 @@ module.exports = function (app) {
       const bookid = req.params.id;
       const { comment } = req.body;
 
-      if (!comment)
-        return res.json('the string missing required field comment');
+      if (!comment) return res.json('missing required field comment');
+
       const updateResponse = [];
       Books.findByIdAndUpdate(
         { _id: bookid },

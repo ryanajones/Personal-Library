@@ -1,34 +1,134 @@
-.border {
-  border-style: solid;
-  border-width: 1px;
-  margin: 10px;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap");
+:root {
+  --primary: rgb(6, 88, 165);
+  --secondary: rgb(20, 20, 20);
 }
 
-#sampleui {
-  max-width: 450px;
-  margin-left: 5%;
-  height: 100%;
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
-#sampleposting {
-  max-width: 450px;
+body {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: unset;
+      -ms-flex-align: unset;
+          align-items: unset;
+  margin: 0;
+  color: white;
+  background-color: var(--secondary);
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+}
+
+body header {
+  width: 100%;
+  height: 85px;
+  background-color: var(--primary);
+}
+
+body header h1 {
+  font-size: 45px;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+body #sample-posting-section {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: unset;
+      -ms-flex-pack: unset;
+          justify-content: unset;
+  width: 900px;
+  height: 530px;
+  margin-top: 50px;
+  border-radius: 5px;
+  background-color: var(--primary);
+}
+
+body #sample-posting-section h2 {
+  margin-bottom: 35px;
+  border-bottom: 3px solid white;
+  font-size: 28px;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+}
+
+body #sample-posting-section .form-container-wrapper {
+  width: 650px;
+  border-radius: 5px;
+}
+
+body #sample-posting-section .form-container-wrapper .form-container {
+  width: 300px;
+  height: 350px;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: var(--secondary);
+}
+
+body #sample-posting-section .form-container-wrapper .form-container form {
   text-align: center;
-  margin-left: 5%;
 }
 
-#userstories {
-  margin-left: 5%;
+body #sample-posting-section .form-container-wrapper .form-container form h4 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 0.09em;
+  line-height: 1.9em;
 }
 
-form {
-  padding: 5px;
+body #sample-posting-section .form-container-wrapper .form-container form .underline-form-title {
+  width: 100%;
+  height: 3px;
+  margin: 12px 0 18px 0;
+  background-color: white;
 }
 
-label {
+body #sample-posting-section .form-container-wrapper .form-container form label {
   display: block;
-  font-weight: bold;
+  margin: 15px 0 10px 0;
+  color: yellow;
+  letter-spacing: 0.08em;
 }
 
-input {
-  margin-bottom: 5px;
+body #sample-posting-section .form-container-wrapper .form-container form input[type="text"] {
+  width: 200px;
+  height: 25px;
 }
+
+body #sample-posting-section .form-container-wrapper .form-container form input[type="submit"] {
+  width: 87px;
+  height: 30px;
+  margin: 25px;
+  padding: 1px 0 0 3px;
+  border: unset;
+  border-radius: 5px;
+  color: yellow;
+  background-color: dimgray;
+  font-size: 15px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+}
+
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+/*# sourceMappingURL=style.css.map */
