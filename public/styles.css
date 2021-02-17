@@ -1,0 +1,163 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap");
+:root {
+  --primary-color: rgb(6, 88, 165);
+  --secondary-color: yellow;
+  --light-color: white;
+  --dark-color: rgb(20, 20, 20);
+  --btn-bg-color: rgb(105, 105, 105);
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: unset;
+      -ms-flex-align: unset;
+          align-items: unset;
+  color: white;
+  background-color: var(--dark-color);
+  font-weight: 300;
+}
+
+body header {
+  width: 100%;
+  height: 85px;
+  background-color: var(--primary-color);
+}
+
+body header h1 {
+  font-size: 45px;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+body #sample-posting-section {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: unset;
+      -ms-flex-pack: unset;
+          justify-content: unset;
+  width: 850px;
+  height: 530px;
+  padding-top: 0;
+  border-radius: 5px;
+  background-color: var(--primary-color);
+}
+
+body #sample-posting-section .form-container:first-child {
+  margin-right: 30px;
+}
+
+body #sample-posting-section .form-container:last-child {
+  margin-left: 30px;
+}
+
+body #sample-ui-section {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: unset;
+      -ms-flex-pack: unset;
+          justify-content: unset;
+  width: 500px;
+  margin: 50px 0 100px 0;
+  padding: 0 30px 30px 30px;
+  border-radius: 5px;
+  background-color: var(--primary-color);
+}
+
+body #sample-ui-section .form-container:first-of-type {
+  height: 190px;
+}
+
+body #sample-ui-section .form-container:last-of-type {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 400px;
+  height: unset;
+  margin-top: 30px;
+}
+
+body #sample-ui-section .form-container:last-of-type #display {
+  margin-top: 40px;
+}
+
+body #sample-ui-section .form-container:last-of-type #display ul {
+  margin-bottom: 3px;
+}
+
+body #sample-ui-section .form-container:last-of-type #display ul li {
+  text-align: left;
+}
+
+body #sample-ui-section .form-container:last-of-type ol {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 40px;
+}
+
+body #sample-ui-section .form-container:last-of-type ol li {
+  text-align: left;
+  width: 90%;
+}
+
+body #sample-ui-section .form-container:last-of-type ol input[type="text"] {
+  margin-top: 15px;
+}
+
+body #sample-ui-section .form-container:last-of-type ol button {
+  margin: 10px 10px 0 10px;
+}
+
+body #sample-ui-section .form-container:last-of-type ol button:first-of-type {
+  margin-top: 15px;
+}
+
+h2 {
+  margin: 1.5rem 0 2rem 0;
+  border-bottom: 3px solid var(--light-color);
+  font-size: 28px;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+}
+
+label {
+  display: block;
+  margin: 15px 0 10px 0;
+  color: yellow;
+  letter-spacing: 0.08em;
+}
+
+input[type="text"] {
+  width: 200px;
+  height: 25px;
+}
+
+input[type="text"]:focus {
+  outline: none;
+}
+/*# sourceMappingURL=styles.css.map */
