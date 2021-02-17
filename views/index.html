@@ -5,55 +5,57 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="/public/style.css">
+  <link rel="stylesheet" href="/public/styles.css">
+  <link rel="stylesheet" href="/public/utilities.css">
 </head>
 
 <body class='flex'>
   <header class="flex">
     <h1>Personal Library</h1>
   </header>
-  <section id='sample-posting-section' class="flex">
+  <section id='sample-posting-section' class="flex my-4 p-2 text-center">
     <h2>Test API Responses</h2>
-    <div class="form-container-wrapper flex">
-      <div class="form-container" style="margin-right: 30px">
-        <form action="/api/books" method="post">
-          <h4>Test post to /api/books</h4>
+    <div class="flex">
+      <div class="form-container bg-dark">
+        <form action="/api/books" method="post" class="text-center">
+          <h4 class="lead">Test post to /api/books</h4>
           <div class="underline-form-title"></div>
           <label for="title">Book Title</label>
           <input type="text" id="title" name="title" value=""><br>
-          <input type="submit" value="Submit">
+          <input class="btn my-2" type="submit" value="Submit">
         </form>
       </div>
-      <div class="form-container" style="margin-left: 30px">
-        <form action="" method="post" id="commentTest" class="border">
-          <h4 class="level-with-margin">Test post to /api/books/{bookid}</h4>
+      <div class="form-container bg-dark">
+        <form action="" method="post" id="commentTest" class="text-center">
+          <h4 class="lead">Test post to /api/books/{bookid}</h4>
           <div class="underline-form-title"></div>
           <label for="idinputtest">BookId to comment on</label>
           <input type="text" name="id" value="" id="idinputtest"><br>
           <label for="comment">Comment</label>
           <input type="text" id="comment" name="comment" value=""><br>
-          <input type="submit" value="Submit">
+          <input class="btn my-2" type="submit" value="Submit">
         </form>
       </div>
     </div>
   </section>
-  <hr style='margin: 50px'>
-  <div id='sampleui'>
-    <h2 style="text-align: left">Sample Front-End</h2>
-    <form id="newBookForm" class="border">
-      <label for="bookTitleToAdd">New Book Title</label>
-      <input type="text" id="bookTitleToAdd" name="title" placeholder="Moby Dick" style="width: 295px">
-      <button type="submit" value="Submit" id="newBook">Submit New Book!</button>
-    </form>
-    <div id='display'></div>
-    <div id='bookDetail' class='border'>
-      <p id='detailTitle'>Select a book to see it's details and comments</p>
-      <ol id='detailComments'></ol>
+  <section id='sample-ui-section' class="flex my-4 p-2 text-center">
+    <h2>Sample Front-End</h2>
+    <div class="form-container bg-dark">
+      <form id="newBookForm" class="text-center">
+        <label for="bookTitleToAdd">New Book Title</label>
+        <input type="text" id="bookTitleToAdd" name="title" placeholder="Moby Dick">
+        <button class="btn my-2" type="submit" value="Submit" id="newBook">Submit New Book!</button>
+      </form>
     </div>
-    <button id='deleteAllBooks'>Delete all books...</button>
-  </div>
-  <hr style='margin: 50px'>
-
+    <div class="form-container  bg-dark flex">
+      <div id='display'></div>
+      <div id='bookDetail' class='my-2'>
+        <p id='detailTitle'>Select a book to see it's details and comments</p>
+        <ol id='detailComments' class=""></ol>
+      </div>
+      <button id='deleteAllBooks' class="btn my-1">Delete all books...</button>
+    </div>
+  </section>
   <script src="https://code.jquery.com/jquery-2.2.1.min.js"
     integrity="sha256-gvQgAFzTH6trSrAWoH1iPo9Xc96QxSZ3feW6kem+O00=" crossorigin="anonymous"></script>
   <script src="/public/client.js"></script>
@@ -68,6 +70,6 @@
       });
     });
   </script>
-</body>
+</bo%dy>
 
 </html>
