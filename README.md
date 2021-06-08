@@ -1,6 +1,6 @@
 # Personal Library
 
-Capable of documenting a book library into a database. Enter as many comments for each book needed. Use the *Sample Front-End* section to experience jQuery's Ajax calls and DOM manipulation in action. Alternatively, use the *Test API Response* section to receive a JSON response of your entries. Node and Express are used to implement a RESTful API for front-end HTTP request handling. Mongoose is used to make the communication between Node and MongoDB more efficient for the CRUD portion. The Chai and Mocha testing tools are used for function testing.
+Capable of documenting a book library into a database. Enter as many comments for each book needed. Use the *Sample Front-End* section to experience jQuery's Ajax calls and DOM manipulation in action. Alternatively, use the *Test API Response* section to receive a JSON response of your entries. Node and Express are used to implement a RESTful API for front-end HTTP request handling. Mongoose is used to make the communication between Node and MongoDB more efficient for the CRUD portion. Chai and Mocha testing tools are used for function testing.
 
 ## Technologies Used
 
