@@ -1,6 +1,6 @@
 # Personal Library
 
-> This web application is a personal library to document the user's owned books into a database. Each book entry has the option to add as many comments about the book as needed. Use the Sample Front-End section to see jQuery at work. Or alternatively, use the Test API Response section to receive a JSON response of your entries. NodeJS and ExpressJS are used to handle server requests from the front-end. MongooseJS is used to make the communication between Node and MongoDB easier for the CRUD portion of the app. The Chai and Mocha testing tools combination are used for function testing.
+Capable of documenting a book library into a database. Enter as many comments for each book needed. Use the *Sample Front-End* section to utilize jQuery's Ajax calls and DOM manipulation. Alternatively, use the *Test API Response* section to receive a JSON response of your entries. Node and Express are used to implement a RESTful API for front-end HTTP requests. Mongoose is used to make the communication between Node and MongoDB easier for the CRUD portion of the app. The Chai and Mocha testing tools combination are used for function testing.
 
 ## Technologies Used
 

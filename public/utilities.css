@@ -25,13 +25,14 @@
 }
 .btn {
   display: inline-block;
-  padding: 5px 15px;
+  padding: 8px 15px;
   border: none;
   border-radius: 5px;
   color: var(--secondary-color);
   background: var(--btn-bg-color);
   font-weight: 700;
   letter-spacing: 0.1em;
+  line-height: 1.2;
   cursor: pointer;
   outline: none;
 }
